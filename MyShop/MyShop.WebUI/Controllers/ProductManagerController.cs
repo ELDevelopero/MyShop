@@ -28,7 +28,7 @@ namespace MyShop.WebUI.Controllers
             List<Product> products = context.Collection().ToList();
             return View(products);
         }
-        [HttpPost]
+        
 
         public ActionResult Create()
         {
@@ -86,8 +86,10 @@ namespace MyShop.WebUI.Controllers
                 productToEdit.Image = product.Image;
                 productToEdit.Name = product.Name;
                 productToEdit.Price = product.Price;
+
                 context.Commit();
                 return RedirectToAction("Index");
+                
             }
         }
 
